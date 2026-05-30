@@ -22,19 +22,22 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: '3.24.5'
           channel: 'stable'
           cache: true
 
+      - name: Regenerate android folder
+        run: |
+          rm -rf android
+          flutter create --org com.lords --project-name lords_of_mirage --platforms=android .
+
+      - name: Patch AndroidManifest for portrait + app label
+        run: |
+          sed -i 's|android:label="lords_of_mirage"|android:label="Lords of Mirage"|g' android/app/src/main/AndroidManifest.xml
+          sed -i 's|<activity|<activity\n            android:screenOrientation="portrait"|1' android/app/src/main/AndroidManifest.xml
+
       - name: Get dependencies
         run: flutter pub get
-
-      - name: Create local.properties
-        run: |
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > android/local.properties
-          echo "flutter.sdk=$FLUTTER_ROOT" >> android/local.properties
-          echo "flutter.buildMode=release" >> android/local.properties
-          echo "flutter.versionName=1.0.0" >> android/local.properties
-          echo "flutter.versionCode=1" >> android/local.properties
 
       - name: Build release APK
         run: flutter build apk --release
