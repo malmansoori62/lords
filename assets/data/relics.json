@@ -1,0 +1,52 @@
+{
+  "relics": [
+    {
+      "id": "scorpion_fang",
+      "name": "Scorpion Fang",
+      "icon": "🦂",
+      "zone": 1,
+      "description": "Basic Slash applies +2 Poison for 3 turns",
+      "effect": "slash_poison"
+    },
+    {
+      "id": "bone_shield_fragment",
+      "name": "Bone Shield Fragment",
+      "icon": "🪨",
+      "zone": 1,
+      "description": "First hit each battle is reduced by 50%",
+      "effect": "first_hit_shield"
+    },
+    {
+      "id": "oasis_pearl",
+      "name": "Oasis Pearl",
+      "icon": "💧",
+      "zone": 2,
+      "description": "Win with >50% HP remaining to earn +1 Water",
+      "effect": "victory_water"
+    },
+    {
+      "id": "mirage_lens",
+      "name": "Mirage Lens",
+      "icon": "🌀",
+      "zone": 2,
+      "description": "Mirage Step also deals 8 damage on activation",
+      "effect": "mirage_damage"
+    },
+    {
+      "id": "anima_crystal_shard",
+      "name": "Anima Crystal Shard",
+      "icon": "⚡",
+      "zone": 3,
+      "description": "Start every battle with +2 bonus Anima Energy",
+      "effect": "bonus_energy"
+    },
+    {
+      "id": "sunfire_ember",
+      "name": "Sunfire Ember",
+      "icon": "🔥",
+      "zone": 3,
+      "description": "Sand Storm deals an additional +15 flat damage",
+      "effect": "sandstorm_bonus"
+    }
+  ]
+}

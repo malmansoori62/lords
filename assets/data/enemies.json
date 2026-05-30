@@ -1,0 +1,111 @@
+{
+  "zones": [
+    {
+      "id": 1,
+      "name": "Rusty Bones Oasis",
+      "caravanGoldCost": 50,
+      "caravanWaterCost": 2,
+      "hazard": { "type": "sandstorm", "triggerEveryTurns": 3, "damage": 3 },
+      "enemies": [
+        {
+          "id": "desert_scavenger",
+          "name": "Desert Scavenger",
+          "hp": 40,
+          "attackMin": 6,
+          "attackMax": 8,
+          "poisonDamage": 0,
+          "intentPattern": ["slash", "slash", "slash"],
+          "weakness": "water",
+          "goldReward": 15,
+          "waterReward": 1,
+          "isBoss": false
+        },
+        {
+          "id": "sand_scorpion",
+          "name": "Sand Scorpion",
+          "hp": 30,
+          "attackMin": 4,
+          "attackMax": 4,
+          "poisonDamage": 2,
+          "intentPattern": ["poison", "slash", "poison"],
+          "weakness": "slash",
+          "goldReward": 12,
+          "waterReward": 2,
+          "isBoss": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Blue Mirage Oasis",
+      "caravanGoldCost": 150,
+      "caravanWaterCost": 4,
+      "hazard": { "type": "mirage_mirrors", "reflectChance": 0.3 },
+      "enemies": [
+        {
+          "id": "sand_mage",
+          "name": "Sand Mage",
+          "hp": 75,
+          "attackMin": 12,
+          "attackMax": 12,
+          "poisonDamage": 0,
+          "intentPattern": ["debuff", "slash", "debuff", "slash"],
+          "weakness": "pierce",
+          "goldReward": 40,
+          "waterReward": 2,
+          "isBoss": false
+        },
+        {
+          "id": "burrowing_worm",
+          "name": "Burrowing Worm",
+          "hp": 90,
+          "attackMin": 15,
+          "attackMax": 15,
+          "poisonDamage": 0,
+          "intentPattern": ["heavy", "heavy", "slash"],
+          "weakness": "anima",
+          "goldReward": 45,
+          "waterReward": 1,
+          "isBoss": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Scorched Sun Oasis",
+      "caravanGoldCost": 0,
+      "caravanWaterCost": 0,
+      "hazard": { "type": "solar_flare", "thirstTurnReduction": 1 },
+      "enemies": [
+        {
+          "id": "crystal_guardian",
+          "name": "Crystal Guardian",
+          "hp": 140,
+          "attackMin": 22,
+          "attackMax": 22,
+          "poisonDamage": 0,
+          "intentPattern": ["defend", "slash", "defend", "slash"],
+          "weakness": "heavy",
+          "goldReward": 100,
+          "waterReward": 0,
+          "isBoss": false
+        },
+        {
+          "id": "sun_eater",
+          "name": "The Sun Eater",
+          "hp": 350,
+          "attackMin": 35,
+          "attackMax": 35,
+          "poisonDamage": 0,
+          "intentPattern": ["slash", "defend", "slash"],
+          "weakness": "mirage_step",
+          "goldReward": 0,
+          "waterReward": 0,
+          "isBoss": true,
+          "phase2HP": 175,
+          "phase2Attack": 45
+        }
+      ]
+    }
+  ]
+}
