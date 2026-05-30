@@ -36,6 +36,11 @@ jobs:
           sed -i 's|android:label="lords_of_mirage"|android:label="Lords of Mirage"|g' android/app/src/main/AndroidManifest.xml
           sed -i 's|<activity|<activity\n            android:screenOrientation="portrait"|1' android/app/src/main/AndroidManifest.xml
 
+      - name: Bump compileSdk to 35 (required by audioplayers_android)
+        run: |
+          sed -i 's|compileSdk = flutter.compileSdkVersion|compileSdk = 35|g' android/app/build.gradle
+          sed -i 's|compileSdk flutter.compileSdkVersion|compileSdk 35|g' android/app/build.gradle
+
       - name: Get dependencies
         run: flutter pub get
 

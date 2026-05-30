@@ -280,10 +280,13 @@ class _ArenaScreenState extends State<ArenaScreen>
                     style: AppTheme.body(size: 11, color: AppColors.gold),
                   ),
                 ),
-              ).animate().fadeIn(duration: 200.ms).then(delay: 1.5.seconds).fadeOut(
-                duration: 400.ms,
-                onComplete: (_) => setState(() => _statusMessage = null),
-              ),
+              ).animate()
+                  .fadeIn(duration: 200.ms)
+                  .then(delay: 1.5.seconds)
+                  .fadeOut(duration: 400.ms)
+                  .callback(callback: (_) {
+                    if (mounted) setState(() => _statusMessage = null);
+                  }),
             ),
         ],
       ),
